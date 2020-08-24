@@ -6,7 +6,7 @@
 ###########################################################
 # Update this line with the R packages to install:
 
-my_packages = c("plyr")
+my_packages = c("plyr","installr","shiny","rattle","shinythemes","leaflet","dplyr")
 
 ###########################################################
 
@@ -19,3 +19,5 @@ install_if_missing = function(p) {
   }
 }
 invisible(sapply(my_packages, install_if_missing))
+library(installr)
+updateR()
