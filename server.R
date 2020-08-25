@@ -9,8 +9,11 @@
 
 library(shiny)
 library(leaflet)
-library(rattle)
+#library(rattle)
 library(ggplot2)
+
+locationsAUS <- read.csv("locationsAUS.csv")
+weatherAUS <- read.csv("weatherAUS.csv")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
