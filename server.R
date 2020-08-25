@@ -1,20 +1,11 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 library(leaflet)
 #library(rattle)
 library(ggplot2)
 
-locationsAUS <- read.csv("locationsAUS.csv")
-weatherAUS <- read.csv("weatherAUS.csv")
-
+locationsAUS <- read.csv("locationsAUStest.csv")
+weatherAUS <- read.csv("weatherAUStest.csv")
+weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
     
@@ -26,7 +17,7 @@ shinyServer(function(input, output) {
     
     prepdata <- reactive({
         weatherAUS %>%
-            filter(weatherAUS$Location == input$city & between(weatherAUS$Date, as.Date(input$date1), 
+            filter(weatherAUS$Location == input$city & between(as.Date(weatherAUS$Date), as.Date(input$date1), 
                                                                as.Date(input$date2)) & 
                        !is.na(input$Factor)) %>%
             select("Date",input$Factor)

@@ -1,19 +1,11 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 #library(rattle)
 library(shinythemes)
 library(leaflet)
 library(dplyr)
-locationsAUS <- read.csv("locationsAUS.csv")
-weatherAUS <- read.csv("weatherAUS.csv")
+locationsAUS <- read.csv("locationsAUStest.csv")
+weatherAUS <- read.csv("weatherAUStest.csv")
+weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
 vars <- setdiff(names(weatherAUS),"Date")
 vars <- setdiff(vars,"Location")
 s <- range(as.Date(weatherAUS$Date))
