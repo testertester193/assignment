@@ -1,4 +1,4 @@
-my_packages = c("plyr","shiny","rattle","shinythemes","leaflet","dplyr")
+my_packages = c("plyr","shiny","shinythemes","leaflet","dplyr")
 
 install_if_missing = function(p) {
   if (p %in% rownames(installed.packages()) == FALSE) {
