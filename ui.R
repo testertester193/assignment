@@ -16,7 +16,7 @@ locationsAUS <- read.csv("locationsAUS.csv")
 weatherAUS <- read.csv("weatherAUS.csv")
 vars <- setdiff(names(weatherAUS),"Date")
 vars <- setdiff(vars,"Location")
-s <- range(weatherAUS$Date)
+s <- range(as.Date(weatherAUS$Date))
 
 
 # Define UI for application that draws a histogram
