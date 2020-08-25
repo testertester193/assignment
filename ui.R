@@ -5,7 +5,7 @@ library(leaflet)
 library(dplyr)
 locationsAUS <- read.csv("locationsAUStest.csv")
 weatherAUS <- read.csv("weatherAUStest.csv")
-weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
+#weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
 vars <- setdiff(names(weatherAUS),"Date")
 vars <- setdiff(vars,"Location")
 s <- range(as.Date(weatherAUS$Date))
