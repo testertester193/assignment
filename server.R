@@ -9,7 +9,7 @@
 
 library(shiny)
 library(leaflet)
-#library(rattle)
+library(rattle)
 library(ggplot2)
 
 # Define server logic required to draw a histogram
