@@ -5,7 +5,7 @@ library(ggplot2)
 
 locationsAUS <- read.csv("locationsAUStest.csv")
 weatherAUS <- read.csv("weatherAUStest.csv")
-weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
+#weatherAUS <- weatherAUS[complete.cases(weatherAUS),]
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
     
