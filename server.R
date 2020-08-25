@@ -36,7 +36,7 @@ shinyServer(function(input, output) {
     output$text <- renderPlot({
         test <- weatherAUS %>%
             filter(weatherAUS$Location == input$city & 
-                       between(weatherAUS$Date, as.Date(input$date1), as.Date(input$date2))) %>%
+                       between(as.Date(weatherAUS$Date), as.Date(input$date1), as.Date(input$date2))) %>%
             select(input$Colfactor1,input$Colfactor2)
         test <- data.frame(test)
         test <- test[complete.cases(test),]
