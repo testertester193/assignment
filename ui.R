@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-#library(rattle)
+library(rattle)
 library(shinythemes)
 library(leaflet)
 library(dplyr)
